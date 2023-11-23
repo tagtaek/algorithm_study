@@ -1,0 +1,20 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int a;
+    int b;
+    cin >> a >> b;
+    double a2 = double(a);
+    double b2 = double(b);
+    double c ; 
+    c = a2/b2;
+    cout.precision(10);
+    cout << c;
+    }
+
+    //오답이유
+    1.  float는 소수점 6자리 까지밖에 정확히 표현을 못해서, double 형을 사용해야함
+    2. 허용 되는 오차가 10e-9 이므로, 소수점 10자리 이상으로 표현해야함 -> cout.precision() 함수 사용.
+    3. 실수형의 결과 데이터를 표현하기 위해 하나 이상의 피연산자를 실수형으로 바꿔줘야함.
