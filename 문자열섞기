@@ -7,9 +7,16 @@ using namespace std;
 
 string solution(string str1, string str2) {
     string answer = "";
-    for (int i=0, j=0; i < str1.length() + str1.length(); i+=2, j++){
-        answer[i] = str1[j];
-        answer[i+1] = str2[j];
+   /*for (int i=0; i< str1.length() ; i++){
+        answer[i] = str1[i];
+        answer[(i*2) +1] = str2[i];
+    }
+*/
+    //빈 문자열에 인덱스로 접근하여 값 변경하기는 불가!!
+
+    for (int i=0; i< str1.length() ; i++){
+        answer += str1[i];
+        answer += str2[i];
     }
     return answer;
 }
