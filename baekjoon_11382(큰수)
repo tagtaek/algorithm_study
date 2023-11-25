@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    long long a, b, c;
+    cin >> a >> b >> c;
+    cout << a + b + c;
+}
+
+/*
+bool : true(~0), false(0) / 1byte(8bit)
+char : -128 ~ 127  / 1byte(8bit)
+unsigned char : 0 ~ 255  / 1byte(8bit)
+short : -32,768 ~ 32767  / 2byte(16bit)
+int : -2,147,483,648 ~ 2,147,483,647  / 4byte(32bit)
+long : -2,147,483,648 ~ 2,147,483,647  / 8byte(64bit)
+long long : -9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807  / 8byte(64bit)
+unsinged short : 0 ~ 65,535  / 2byte(16bit)
+...
+float : 1.175494e-38 ~ 3.402823e+38(유효자릿수 7)  / 4byte(32bit)
+double : ±1.7×10^(-307) ~ ±1.7×10^(308)  / 8byte(64bit)
+long double : ±1.7×10^(-307) ~ ±1.7×10^(308) 이상  / 8byte(64bit)
+*/
