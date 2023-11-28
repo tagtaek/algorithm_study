@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int phour, pmin, runtime;
+    int runhour, runmin;
+    int endhour, endmin;
+    
+    cin >> phour >> pmin >> runtime;
+    runhour = runtime/60;
+    runmin = runtime%60;
+    
+    endhour = phour + runhour;
+    endmin = pmin + runmin;
+    if (endmin >=60){
+        endhour +=1;
+        endmin -= 60;
+    }
+    //"분"이 60보다 큰 경우 시간단위로 넘겨주는 작업을 먼저한다.
+    
+    if (endhour >= 24){
+        cout << endhour -24 << " " << endmin;
+    }
+    else
+        cout << endhour << " " << endmin;
+    //그 다음 "시"가 24보다 큰경우, 아닌 경우를 분리하여 완료시간이 출력되도록 한다.
+}
