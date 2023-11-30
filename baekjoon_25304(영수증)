@@ -1,0 +1,18 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int total, var;
+    int price, num, chktotal;
+    chktotal = 0;  //초기화 해줘야함
+    cin >> total >> var;
+    for (int i =0; i <var; i++){
+        cin >> price >> num;
+        chktotal += price*num;
+    }
+    if(total == chktotal)
+        cout << "Yes";
+    else
+        cout << "No";
+}
