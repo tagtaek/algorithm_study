@@ -1,0 +1,12 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int t, n1, n2;
+    cin >> t;
+    for(int i=1; i<=t ; i++){ //출력하려는 내용에 따라 시작~끝 i  주의!!
+        cin >> n1 >> n2;
+        cout << "Case #" << i << ": " << n1 + n2 << "\n" ;
+    }
+}
