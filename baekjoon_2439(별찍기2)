@@ -1,0 +1,17 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main(){
+    int t;
+    string star;
+    cin >> t;
+    for(int i=0; i<t; i++){
+        star += '*';
+        for(int k=t-i;k>1;k--){ // 입력되는 공백 개수 또한, t 값에의해 변동되는 점!
+            cout << " ";
+        }
+        cout << star << endl;
+    }
+}
