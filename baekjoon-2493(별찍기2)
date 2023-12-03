@@ -1,0 +1,17 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main(){
+    int t;
+    string star;
+    cin >> t;
+    for(int i=0; i<t; i++){
+        star += '*';
+        for(int k=t-i;k>1;k--){ //공백의 개수가 t에도 영항받음을 주의
+            cout << " ";
+        }
+        cout << star << endl;
+    }
+}
