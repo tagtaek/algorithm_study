@@ -3,7 +3,7 @@ using namespace std;
 
 int main(){
     int n, m;
-    cin >> n >> m;
+    cin >> n >> m; //vs 오류 알아보자
     int basket[n];
     for (int i=0; i<n; i++)
         basket[i] = 0;
