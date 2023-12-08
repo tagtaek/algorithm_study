@@ -3,7 +3,7 @@ using namespace std;
 int main(){
     int n, max;
     cin >> n;
-    int score[n];
+    double score[n]; //배열들을 처음부터 double로 선언했더니 정답이 나왔다.
     
     for(int i=0; i<n; i++){
         cin >> score[i];
@@ -15,16 +15,15 @@ int main(){
         else
             max = score[i];
     }
-    int newscore[n];
-    int newsum;
+    double newscore[n];
+    double newsum;
     double newave;
     newsum = 0;
     for(int i=0;i<n;i++){
         newscore[i] = (score[i]/max)*100;
         newsum += newscore[i];
     }
-    double newsum2 = (double)newsum;
     newave = newsum/n;
-    cout.precision(3);
+    cout.precision(4);
     cout << newave;
 }
