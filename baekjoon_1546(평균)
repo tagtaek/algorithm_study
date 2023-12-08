@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+int main(){
+    int n, max;
+    cin >> n;
+    int score[n];
+    
+    for(int i=0; i<n; i++){
+        cin >> score[i];
+    }
+    max = score[0];
+    for(int i=0;i<n;i++){
+        if(max > score[i])
+            max = max;
+        else
+            max = score[i];
+    }
+    int newscore[n];
+    int newsum;
+    double newave;
+    newsum = 0;
+    for(int i=0;i<n;i++){
+        newscore[i] = (score[i]/max)*100;
+        newsum += newscore[i];
+    }
+    double newsum2 = (double)newsum;
+    newave = newsum/n;
+    cout.precision(3);
+    cout << newave;
+}
