@@ -21,6 +21,7 @@ int main(){
     newsum = 0;
     for(int i=0;i<n;i++){
         newscore[i] = (score[i]/max)*100;
+//int로 계산하는 경우, score[i]/max 가 1보다 작은 수이기 때문에 1or0으로 나와서 결과가 완전히 틀려지게 됨.
         newsum += newscore[i];
     }
     newave = newsum/n;
