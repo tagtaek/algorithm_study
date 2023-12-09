@@ -1,0 +1,8 @@
+#include <iostream>
+using namespace std;
+int main(){
+    char c; //0~9의 경우에도 '0' ~ '9' 이므로 똑같음
+    cin >> c;
+    int i = int(c); //문자형은 인트형으로 변환후 출력하면 아스키코드로 출력됨.
+    cout << i;
+}
