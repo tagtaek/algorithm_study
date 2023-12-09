@@ -1,0 +1,16 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+int main(){
+    int t;
+    cin >> t;
+    string text;
+    text = ""; //초기화 해주어야함
+    for(int i=0;i<t;i++){
+        cin >> text;
+        cout << text.front() << text.back() << endl;
+    }
+}
+/* start, end는 시작과 끝의 '주소'를 반환하고
+front(), back()은 시작과 끝의 문자를 반환한다.
