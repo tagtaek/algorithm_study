@@ -8,15 +8,15 @@ int main() {
     cin >> s;
     while(item <= 'z'){
         for(int i=0; i< s.length();i++){
-            if(item == s[i])
+            if(item == s[i]){
                 indexx = i;
+                break;
+            }
         }
         if(s.find(item) != string::npos)
             cout <<  indexx << " ";
         else
             cout << -1 << " ";
         item++;
-    }
-
-    
+    }   
 }
