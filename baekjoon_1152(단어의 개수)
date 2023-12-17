@@ -1,0 +1,21 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+    string s = "";
+    getline(cin, s); //기본적으로 중간에 공백이 있으면 문자열 입력이 끝나기 때문에,
+    // 공백을 포함한 문자열을 입력받는 함수.
+    int  count = 0;
+    for(int i=0; i< s.length();i++){
+        if(s[i] == 32)
+            count++;
+    } 문장에 포함된 공백의 개수를 먼저 카운트하고, 앞뒤 공백여부에 따라 경우의수를 나눈다.
+    if((s.front() != 32) && (s.back() !=32)){
+        cout << count +1 ;
+    }
+    else if((s.front() == 32) && (s.back() ==32)){
+        cout << count - 1;
+    }
+    else
+        cout << count;
+}
