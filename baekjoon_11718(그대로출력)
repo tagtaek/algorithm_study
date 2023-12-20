@@ -1,0 +1,11 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+    string s;
+    while(1){
+        getline(cin, s); //공백포함 받기, 단, 버퍼는 신경쓰지 않아도 된다. cin.ignore() 에 대해 공부해보자
+        cout << s << endl;
+        if(cin.eof()) break; //파일 끝인지 확인
+    }
+}
