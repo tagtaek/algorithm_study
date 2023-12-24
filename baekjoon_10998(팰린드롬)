@@ -15,8 +15,9 @@ int main(){
     for(int i=0; i<h_length;i++){
         if(s[i] == s[s.length() -1-i])
             equal = true;
-        else
+        else{
             equal = false;
+            break;
     }
     if(equal == true)
         cout << 1;
