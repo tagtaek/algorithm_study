@@ -18,6 +18,7 @@ int main(){
         else{
             equal = false;
             break;
+
     }
     if(equal == true)
         cout << 1;
