@@ -1,0 +1,12 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm> //count함수가 내장된 라이브러리
+using namespace std;
+
+int main() {
+    string s;
+    cin >> s;
+    vector<char> v = {};
+
+}
