@@ -7,6 +7,31 @@ using namespace std;
 int main() {
     string s;
     cin >> s;
-    vector<char> v = {};
-
+    vector<char> v ;
+    for(int i=0; i<s.length(); i++){
+        v.push_back(s[i]);
+    }
+    int arr[26] = {0};
+    for(int i=0; i<26; i++){
+        arr[i] = count(v.begin(), v.end(), 'a'+i) +
+        count(v.begin(), v.end(), 'A'+i);
+    }
+    int max = 0;
+    char alpa_max = 'A';
+    for(int i=0;i<26;i++){
+        if(arr[i] > max){
+            max = arr[i];
+            alpa_max = 'A' + i;
+        }// alpa_max += i ; 를 하면, max가 바뀔때마다 i가 불필요하게 또 더해진다.
+    }
+    int count = 0;
+    for(int i=0; i<26;  i++){
+        if(arr[i] == max){
+            count++;
+        }
+    }
+    if(count >= 2)
+        cout << '?';
+    else
+        cout << alpa_max;
 }
