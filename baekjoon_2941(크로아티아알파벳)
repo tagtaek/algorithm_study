@@ -1,0 +1,105 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main(){
+    int count_cro = 0;
+    string s;
+    cin >> s;
+    for(int i=0; i<s.length();){ // 'i'를 이렇게 경우의 수마다 따로 증가시킬 때, 경우의 수를 하나라도 빠트리면 무한루프에 빠진다.
+        if(s[i] == 'c'){
+            if(s[i+1] == '='){
+                count_cro++;
+                i += 2;
+                continue;
+            }
+            else if(s[i+1]=='-'){
+                count_cro++;
+                i += 2;
+                continue;
+            }
+            else 
+                i++;
+                count_cro++;
+                continue;
+        }
+        else if(s[i] == 'd'){
+            if(s[i+1]=='-'){
+                count_cro++;
+                i += 2;
+                continue;
+            }
+            else if(s[i+1]=='z'){
+                if(s[i+2]=='='){
+                    count_cro++;
+                    i += 3;
+                    continue;
+                }
+                else{
+                    i++;
+                    count_cro++;
+                    continue;
+                }
+            }
+            else {
+                i++;
+                count_cro++;
+                continue;
+            }
+        }
+        else if(s[i] == 'l'){
+            if(s[i+1] == 'j'){
+                count_cro++;
+                i += 2;
+                continue;
+            }
+            else {
+                i++;
+                count_cro++;
+                continue;
+            }
+        }
+        else if(s[i] == 'n'){
+            if(s[i+1] == 'j'){
+                count_cro++;
+                i += 2;
+                continue;
+            }
+            else {
+                i++;
+                count_cro++;
+                continue;
+            }
+        }
+        else if(s[i] == 's'){
+            if(s[i+1] == '='){
+                count_cro++;
+                i += 2;
+                continue;
+            }
+            else {
+                i++;
+                count_cro++;
+                continue;
+            }
+        }
+        else if(s[i] == 'z'){
+            if(s[i+1] == '='){
+                count_cro++;
+                i += 2;
+                continue;
+            }
+            else {
+                i++;
+                count_cro++;
+                continue;
+            }
+        }
+        else{
+            i++;
+            count_cro++;
+            continue;
+        }
+    }
+    cout << count_cro;
+}
