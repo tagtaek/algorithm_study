@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <cmath>
+using namespace std;
+
+int main(){
+    int t;
+    int q, d, n, p;
+    cin >> t;
+    for(int i=0; i<t; i++){
+        int rest;
+        cin >> rest;
+        //쿼터 개수와 나머지 돈
+        q = rest/25;
+        rest = rest%25;
+
+        //다임 개수와 나머지 돈
+        d= rest/10;
+        rest = rest%10;
+
+        //니켈 개수와 나머지돈
+        n = rest/5;
+        rest = rest%5;
+
+        //페니 개수
+        p = rest/1;
+        cout << q << " " << d << " " << n << " " << p << endl;
+    }
+}
+/*
+쿼터 : 0.25 달러 25센트
+다임 : 0.1  달러 10센트
+니켈 : 0.05 달러 5센트
+페니 : 0.01 달러 1센트
+*/
