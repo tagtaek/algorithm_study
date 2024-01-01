@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main(){
+    int n, proto, sum, side, center, side_c, center_c;
+    proto = 4;
+    sum = 9; // n=1일때
+    
+    side = 1; //사이드 선 하나에 새로 찍히는 점의수
+    side_c = 2;//사이드의 개수
+
+    center = 3; // 빈 중앙 하나에 새로 찍히는 점
+    center_c = 1; //빈 중앙의 개수
+
+    cin >> n;
+    if(n==1){
+        sum = sum;
+    }
+    else{
+        for(int i=2;i<n+1;i++){
+            center = (center*2) -1;
+            center_c = center_c*2;
+
+            side = side*2;
+            side_c = center_c + 1;
+
+            sum = sum + center*center_c + side*side_c;
+        }    
+    }
+    cout << sum;
+}
