@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main(){
+    int n;
+    cin >> n;
+    int line = 1; //특정 단계의 테두리 라인까지 거치는 방의 개수가 같으니, 라인으로 구분하자
+    int line_min =1;
+    int line_max =1;
+    if(n==1){
+        cout << 1;
+    }
+    else{
+        for(int i=1;;i++){
+            line++;
+            line_min = line_max + 1;
+            line_max = line_max + 6*i;
+            if((n>=line_min)&&(n<=line_max)){
+                cout << line;
+                break;
+            }
+        }//각 라인의 max와 min를 찾아서, n이 그 라인 범위 내에 속하는지 확인
+    }
+}
