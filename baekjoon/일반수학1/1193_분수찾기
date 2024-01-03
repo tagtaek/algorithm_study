@@ -1,0 +1,45 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main(){
+    int n;
+    cin >> n;
+    int line = 1;
+    int line_min =1;
+    int line_max =1;
+    if(n==1){
+        cout << 1 << "/" << 1;;
+    }
+    else{
+        for(int i=2;;i++){
+            line++;
+            line_min = line_max + 1;
+            line_max = line_max + i;
+            if((n>=line_min)&&(n<=line_max)){
+                // cout << line;
+                break;
+            }// 몇 번째 대각줄에 있는지
+        }
+        int room, parent, child;
+        room = n - line_min;
+        parent = line;
+        child = 1;
+        if(line%2==0){
+            for(int i=0;i<room;i++){
+                parent = parent - 1;
+                child = child + 1;
+            }
+        }
+        else{
+            for(int i=0;i<room;i++){
+                parent = parent + 1;
+                child = child - 1;
+            }
+        }
+
+    cout << child << "/" << parent;
+
+    }
+    
+}
