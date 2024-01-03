@@ -21,25 +21,24 @@ int main(){
                 break;
             }// 몇 번째 대각줄에 있는지
         }
-        int room, parent, child;
-        room = n - line_min;
-        parent = line;
-        child = 1;
-        if(line%2==0){
+        int room, parent, child; // 짝수/홀수 줄 각각 시작 모양이 다름을 주의!!
+        room = n - line_min; //그 줄에 도달 후, 몇번 이동하는지
+        if(line%2==0){ // 짝수줄
+            parent = line; //초기화 위치가 for문 안으로 안들어가도록 주의!!
+            child = 1;
             for(int i=0;i<room;i++){
                 parent = parent - 1;
                 child = child + 1;
             }
         }
-        else{
+        else{// 홀수줄
+            parent = 1;
+            child = line;
             for(int i=0;i<room;i++){
                 parent = parent + 1;
                 child = child - 1;
             }
         }
-
     cout << child << "/" << parent;
-
     }
-    
 }
