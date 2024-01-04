@@ -1,0 +1,33 @@
+#include <iostream>  // 시간제한 0.25초
+using namespace std;
+
+int main(){
+    int a, b, v, day1, day2, last;
+    cin >> a >> b >> v;
+    last = v - a;
+    day1 = last/(a-b);
+    day2 = day1 + 1;
+    if((last%(a-b)) != 0){
+        day2 += 1;
+    } 
+    cout << day2;
+} //
+
+/* 시간초과
+int main(){
+    int a, b, v, day, state;
+    cin >> a >> b >> v;
+    day = 0;
+    state = 0;
+
+    while(1){
+        day++;
+        state += a;
+        if(state>=v){
+            cout << day;
+            break;
+        }
+        state -= b;
+    }
+}
+*/
