@@ -1,0 +1,37 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main(){
+    vector<int> v; //while문에 들어가면 반복 1회 끝날때마다 clear 필요!!
+    while(1){
+        int n, sum;
+        cin >> n;
+        if(n == -1)
+            break;
+        else {
+            for(int i=1;i<=n;i++){
+                if(n%i == 0){
+                    v.push_back(i);
+                }
+            }
+            v.pop_back();
+            sum = 0;
+            for(int i=0; i<v.size();i++){
+                sum += v[i];
+            }
+            if(sum == n){
+                cout << n << " = " << 1;
+                for(int i=1;i<v.size();i++){
+                    cout << " + " << v[i];
+                }
+            }
+            else{
+                cout << n << " is NOT perfect.";
+            }
+            cout << endl;
+        }
+        // 벡터를 비워줘야 함!!
+        v.clear();
+    }
+}
