@@ -1,0 +1,32 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main(){
+    vector<int> v, v2; // 여러번 쓸일 있으면 반복 1회 끝날때마다 clear 필요!!
+    int n, m, sum, sosu_min;
+    sum = 0;
+    cin >> n >> m;
+    for(int i=n;i<=m;i++){
+        for(int j=1;j<=i;j++){
+            if(i%j == 0){
+                v.push_back(j);
+            }
+        }
+        if(v.size() == 2){
+            v2.push_back(i);
+        }
+        v.clear();
+    } 
+
+// 소수인 것들을 모아서 또 조건을 구현하기 위해 다른 벡터 v2를 선언함!
+    if(v2.size() == 0){
+        cout << -1;
+    }
+    else{
+        for(int i=0;i<v2.size();i++){
+            sum += v2[i];
+        }
+        cout << sum << "\n" << v2[0];
+    }
+}
