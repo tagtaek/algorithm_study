@@ -1,0 +1,31 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main(){
+    int x_all[3] = {0};
+    int y_all[3] = {0};
+    int x_answer, y_answer;
+    for(int i=0; i<3; i++){
+        cin >> x_all[i] >> y_all[i];
+    }
+    
+    // x좌표 중에서 개수가 1개인걸 찾는 count
+    for(int i=0; i<3; i++){
+        int n = count(x_all,x_all +3, x_all[i]);
+        if(n == 1){
+            x_answer = x_all[i];
+            break;
+        }
+    }
+
+    // y좌표 중에서 개수가 1개인걸 찾는 count
+    for(int i=0; i<3; i++){
+        int n = count(y_all,y_all +3, y_all[i]);
+        if(n == 1){
+            y_answer = y_all[i];
+            break;
+        }
+    }
+    cout << x_answer << " " << y_answer;
+}
