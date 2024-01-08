@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n, width, height;
+    int xmin, xmax, ymin, ymax;
+    
+    //max와 min의 초기값을 극단으로 잡아야 좋다!!
+    xmin =10000;
+    xmax =-10000;
+    ymin =10000;
+    ymax =-10000;
+    cin >> n;
+    if(n==1){
+        cout << 0;
+    }
+    else{
+        for(int i=0; i< n; i++){
+        int x, y;
+        cin >> x >> y;
+        if(xmin > x)
+            xmin = x;
+        if(xmax < x)
+            xmax = x;
+        
+        if(ymin > y)
+            ymin = y;
+        if(ymax < y)
+            ymax = y;
+        }
+        width = xmax - xmin;
+        height = ymax - ymin;
+        cout << width*height;
+    }
+}
