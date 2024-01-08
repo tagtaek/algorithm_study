@@ -1,0 +1,9 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main(){
+    long n; // 자로형 크기를 고려하자
+    cin >> n;
+    cout << n*4;
+}
