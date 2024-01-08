@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int x, y, endx, endy, min;
+    int sub[4] = {0};
+    cin >> x >> y >> endx >> endy;
+    sub[0] = x - 0;
+    sub[1] = endx -x;
+    sub[2] = y - 0;
+    sub[3] = endy - y;
+
+    min = sub[0];
+    for(int i =0;i<3;i++){
+        if(min > sub[i+1])
+            min = sub[i+1];
+    }
+    cout << min;
+}
