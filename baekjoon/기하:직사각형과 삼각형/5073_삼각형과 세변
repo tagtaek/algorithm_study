@@ -1,0 +1,85 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    while(1){
+        int a, b, c;
+        cin >> a >> b >> c;
+        if(a == 0)
+            break;
+        int x, y, z;
+        int arr[3] = {0};
+        if(a<b){
+            if(a<c){
+                arr[0] = a;
+                if(b<c){
+                    arr[1] = b;
+                    arr[2] = c;
+                    }
+                else{
+                    arr[1] = c;
+                    arr[2] = b;
+                    }
+                }
+            else{
+                arr[0] = c;
+                arr[1] = a;
+                arr[2] = b;
+            }
+        }
+        else{
+            if(b<c){
+                arr[0] = b;
+                if(a<c){
+                    arr[1] = a;
+                    arr[2] = c;
+                    }
+                else{
+                    arr[1] = c;
+                    arr[2] = a;
+                    }
+                }
+            else{
+                arr[0] = c;
+                arr[1] = b;
+                arr[2] = a;
+            }
+        } //작은 순서대로 배열
+        x = arr[0];
+        y = arr[1];
+        z = arr[2];
+
+        if((x+y)<=z){
+            cout << "Invalid" << endl;
+        }
+        else{
+            if(x == y){
+                if(y==z){
+                    cout << "Equilateral" << endl;
+                }
+                else{
+                    cout << "Isosceles" << endl;
+                }
+            }
+            else if(x == z){
+                if(y==z){
+                    cout << "Equilateral" << endl;
+                }
+                else{
+                    cout << "Isosceles" << endl;
+                }
+            }
+            else if(z == y){
+                if(x==z){
+                    cout << "Equilateral" << endl;
+                }
+                else{
+                    cout << "Isosceles" << endl;
+                }
+            }
+            else{
+                cout << "Scalene" << endl;
+            }
+           }
+    }
+}
