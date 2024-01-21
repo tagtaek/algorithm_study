@@ -1,0 +1,39 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main(){
+    int n, goal;
+    cin >> n >> goal;
+    vector<int> card;
+    for(int i= 0; i<n;i++){
+        int cardnum;
+        cin >> cardnum;
+        card.push_back(cardnum);
+    }
+    
+    //브루트 포스 탐색
+    int pick1, pick2, pick3, sum, sub, best, answer;
+    best = goal;
+    for(int i=0;i<n-2;i++){
+        pick1 = card[i];
+        for(int j=i+1; j<n-1; j++){
+            pick2 = card[j];
+            for(int k=j+1; k<n; k++){
+                pick3 = card[k];
+                sum = pick1+pick2+pick3;
+                if(sum > goal){
+                    continue;
+                }
+                else{
+                    sub = goal - sum;
+                    if(sub<= best){
+                        best = sub;
+                        answer = sum;
+                    }
+                }
+            }
+        }
+    }
+    cout << answer;
+}
