@@ -1,0 +1,98 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main(){
+    int row, column, x1, x2, y1, y2, count1, count2;
+    cin >> row >> column;
+    char chess[row][column];
+
+    for(int i=0; i<row; i++){
+        for(int j=0; j<column; j++){
+            cin >> chess[i][j];
+        }
+    }
+    /* 
+    -----output test-----
+    for(int i=0; i<row; i++){
+        for(int j=0; j<column; j++){
+            cout << chess[i][j];
+        }
+        cout << "\n";
+    }--------------------
+    */
+   int min, sol_min;
+   sol_min = 64, min = 0;
+   for(x2=7; x2<row; x2++){
+        for(y2=7; y2 < column; y2++){
+            x1 = x2 - 7;
+            y1 = y2 - 7;
+            count1 = 0, count2 = 0;
+
+//이차원 배열이라고 한큐에 비교하려하지말고, 한줄씩 비교하는 방법도 꼭 고려를 하자 ㅜㅜ
+            // W first
+            int i, j, k;
+            for(k = x1; k <= x2; k+=2){
+                for(i=y1, j=y1+1; i<=y2, j<=y2; i+=2, j+=2){
+                    if(chess[k][i] != 'W'){
+                        count1++;
+                    }
+                    if(chess[k][j] != 'B'){
+                        count1++;
+                    }
+            }
+            }
+            for(k = x1+1; k <= x2; k+=2){
+                for(i=y1, j=y1+1; i<=y2, j<=y2; i+=2, j+=2){
+                    if(chess[k][i] != 'B'){
+                        count1++;
+                    }
+                    if(chess[k][j] != 'W'){
+                        count1++;
+                    }
+            }
+            }
+
+            // B first
+            for(k = x1; k <= x2; k+=2){
+                for(i=y1, j=y1+1; i<=y2, j<=y2; i+=2, j+=2){
+                    if(chess[k][i] != 'B'){
+                        count2++;
+                    }
+                    if(chess[k][j] != 'W'){
+                        count2++;
+                    }
+            }
+            }
+            for(k = x1+1; k <= x2; k+=2){
+                for(i=y1, j=y1+1; i<=y2, j<=y2; i+=2, j+=2){
+                    if(chess[k][i] != 'W'){
+                        count2++;
+                    }
+                    if(chess[k][j] != 'B'){
+                        count2++;
+                    }
+            }
+            }
+
+            if(count1 < count2){
+                min = count1;
+            }
+            else{
+                min = count2;
+            }
+
+            if(min < sol_min){
+                sol_min = min;
+            }
+
+
+        }
+   }
+    cout << sol_min;
+}
+
+
+/* 
+row: x, column: y
+*/
