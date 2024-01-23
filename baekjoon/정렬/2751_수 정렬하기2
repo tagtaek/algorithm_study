@@ -1,0 +1,29 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main(){
+    int n;
+    vector<int> v;
+    cin >> n;
+    for(int i=0; i<n; i++){
+        int m;
+        cin >> m;
+        v.push_back(m);
+    }
+
+    sort(v.begin(), v.end());
+    /*
+    sort() 함수는 C++ STL에서 제공하는 함수로써 각종 알고리즘 문제를 풀 때도 
+    활용할 수 있어 자주 쓰이는데, 이 함수의 시간 복잡도는 nlogn입니다. 
+    이 함수는 intro sort라는 정렬 방식을 바탕으로 구현되어 있는데 
+    이 방식은 quick sort를 기반으로 heap sort와 insertion sort를 섞은 방식으로 
+    최악의 경우 n^2의 시간 복잡도를 가지는 quick sort와는 달리, 
+    최악의 경우에도 nlogn을 보장하는 정렬 알고리즘입니다.
+    */
+
+    for(int i=0; i<n; i++){
+        cout << v[i] << '\n';
+    }
+}
