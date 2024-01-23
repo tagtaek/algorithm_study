@@ -1,0 +1,29 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main(){
+    int n, k, cut_idx, temp;
+    vector<int> score;
+    cin >> n>> k;
+    for(int i=0; i<n; i++){
+        int m;
+        cin >> m;
+        score.push_back(m);
+    }
+    
+    //삽입 정렬
+    for(int i=1; i<n; i++){
+        for(int j=0; j<= i -1; j++){
+            if(score[i] < score[j]){
+                temp = score[j];
+                score[j] = score[i];
+                score[i] = temp;
+            }
+        }
+    }
+
+    cut_idx = n -k;
+    cout << score[cut_idx];
+    
+}
