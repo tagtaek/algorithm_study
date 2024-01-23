@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n, three, five, sum, bucket;
+    cin >> n;
+    three = 0, five = 0, bucket = 0;
+    for(int i= 0; i<1667; i++){
+        for( int j=0; j<1001; j++){
+            sum = 3*i + 5*j;
+            if( sum == n){
+                bucket = i + j;
+                break;
+            }
+        }
+        if( sum == n){
+                break;
+            }
+    }
+    if( bucket == 0){
+        cout << -1;
+    }
+    else {
+        cout << bucket;
+    }
+}
