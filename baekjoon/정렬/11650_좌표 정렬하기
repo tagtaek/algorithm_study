@@ -1,0 +1,72 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+int main(){
+    vector<pair<int, int> > v;
+    int n;
+    cin >> n;
+    for(int i=0; i<n; i++){
+        int xn, yn;
+        cin >> xn >> yn;
+        v.push_back(make_pair(xn,yn));
+    }
+
+    sort(v.begin(), v.end());
+
+    for(int i =0; i<v.size(); i++){
+        cout << v[i].first << " " << v[i].second << "\n";
+    }
+
+
+
+    /* 정답이지만 시간초과한 코드
+    int n;
+    cin >> n;
+    vector<int> x;
+    vector<int> y;
+    for(int i=0; i<n; i++){
+        int xn, yn;
+        cin >> xn >> yn;
+        x.push_back(xn);
+        y.push_back(yn);
+    }
+    
+    int temp;
+    for(int i=1; i<x.size(); i++){
+        for(int j=0; j<= i -1; j++){
+            if(x[i] < x[j]){
+                //x change
+                temp = x[j];
+                x[j] = x[i];
+                x[i] = temp;
+                
+                //y change
+                temp = y[j];
+                y[j] = y[i];
+                y[i] = temp;
+            }
+            else if(x[i] == x[j]){
+                if(y[i] < y[j]){
+                    temp = x[j];
+                    x[j] = x[i];
+                    x[i] = temp;
+                
+                    //y change
+                    temp = y[j];
+                    y[j] = y[i];
+                    y[i] = temp;
+                }
+            }
+
+        }
+    }
+    for(int i =0; i<x.size(); i++){
+        cout << x[i] << " " << y[i] << "\n";
+    }
+*/
+}
+/* 
+*/
+
