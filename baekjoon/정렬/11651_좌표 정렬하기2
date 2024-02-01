@@ -1,0 +1,28 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+bool compare(const pair<int, int> &a, const pair<int, int> &b){
+    if (a.second == b.second){ //y값이 같다면 x값이 더 큰 값이 뒤로
+        return a.first < b.first;
+    }
+    return  a.second < b.second; //x값이 같지 않다면 더 큰 값이 뒤로
+}
+
+int main(){
+    vector<pair<int, int> > v;
+    int n;
+    cin >> n;
+    for(int i=0; i<n; i++){
+        int xn, yn;
+        cin >> xn >> yn;
+        v.push_back(make_pair(xn,yn));
+    }
+
+    sort(v.begin(), v.end(), compare);
+
+    for(int i =0; i<v.size(); i++){
+        cout << v[i].first << " " << v[i].second << "\n";
+    }
+}
